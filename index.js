@@ -14,7 +14,7 @@ app.use(bodyparser.json()); //Agregar plugins a express
 app.use(cors()); //Agregar plugin a express
 
 mongoose.connect(
-  process.env.DB_URI, //`mongodb+srv://existro:Maniac00!@existro.jtfcs.mongodb.net/cineilu?retryWrites=true&w=majority`,
+  process.env.DB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
