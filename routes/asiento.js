@@ -8,11 +8,13 @@ router.get("/", (req, res) => {
     .exec()
     .then((x) => res.status(200).send(x));
 });
-//*Obtener un registro
+//*Obtener un registro filtrado por idsala idsala
 router.get("/:id", (req, res) => {
-  Asiento.findById(req.params.id)
-    .exec()
-    .then((x) => res.status(200).send(x));
+  Asiento.find()
+  .where('idsala').equals([req.params.id])
+  .exec()
+  .then((x) => res.status(200).send(x));
+
 });
 //*Insertar un nuevo registro
 router.post("/", (req, res) => {

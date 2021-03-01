@@ -6,7 +6,7 @@ const Asiento = mongoose.model(
   new Schema(
     {
       idsala: { type: Schema.Types.ObjectId, ref: "Sala" },
-      numero: Date,
+      numero: Number,
       fila: Number,
     },
     { timestamps: true }

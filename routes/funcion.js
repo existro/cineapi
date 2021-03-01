@@ -13,6 +13,12 @@ router.get("/:id", (req, res) => {
     .exec()
     .then((x) => res.status(200).send(x));
 });
+router.get("/:val/:id", (req, res) => {
+  Funcion.find()
+  .where(req.params.val).equals([req.params.id])
+  .exec()
+  .then((x) => res.status(200).send(x));
+});
 
 router.post("/", (req, res) => {
   Funcion.create(req.body).then((x) => res.status(201).send(x));

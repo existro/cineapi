@@ -10,9 +10,11 @@ const asiento = require("./routes/asiento");
 const ticket = require("./routes/ticket");
 
 const app = express();
-app.use(bodyparser.json()); //Agregar plugins a express
-app.use(cors()); //Agregar plugin a express
+//Agregar plugins a express
+app.use(bodyparser.json()); 
+app.use(cors()); 
 
+//Conexion a la base de datos
 mongoose.connect(
   process.env.DB_URI,
   {
@@ -21,12 +23,13 @@ mongoose.connect(
   }
 );
 
+//agregar las rutas
 app.use("/sala", sala);
 app.use("/funcion", funcion);
 app.use("/asiento", asiento);
 app.use("/ticket", ticket);
 app.use("/", (req, res) => {
-  res.send("ApiRest Cine Alexis");
+  res.send("ApiRest Cine IlU");
 });
 
 //module.exports = app;

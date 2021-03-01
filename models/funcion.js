@@ -9,6 +9,7 @@ const Funcion = mongoose.model(
       inicio: Date,
       duracion: Number,
       precio: Number,
+      active: Boolean,
     },
     { timestamps: true }
   )
